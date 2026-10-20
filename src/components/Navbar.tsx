@@ -129,10 +129,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <MessageCircle className="w-5 h-5" />
             </a>
 
-            {/* Primary Action Button */}
+            {/* Primary Action Button (Shown on sm+ screens, mobile has bottom bar) */}
             <a
               href="#customizer"
-              className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#76283B] via-[#8B3045] to-[#76283B] hover:from-[#581C2B] hover:to-[#581C2B] shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 border border-[#C8A15A]/40"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-[#76283B] via-[#8B3045] to-[#76283B] hover:from-[#581C2B] hover:to-[#581C2B] shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 border border-[#C8A15A]/40"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#DFC185]" />
               <span>Create Your Invite</span>

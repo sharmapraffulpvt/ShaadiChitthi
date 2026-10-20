@@ -202,39 +202,25 @@ export const HeroExperience: React.FC<HeroExperienceProps> = ({ onOpenDemo }) =>
                 </div>
               </div>
 
-              {/* Envelope Lower Flap & Side Folds (Creates realistic 3D envelope pocket) */}
-              <div
-                className="absolute inset-0 pointer-events-none rounded-2xl overflow-hidden"
+              {/* Envelope Lower Flap & Side Folds (100% responsive SVG, zero mobile overflow) */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none rounded-2xl overflow-hidden"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
                 style={{ zIndex: 10 }}
               >
-                {/* Triangular Left Fold */}
-                <div
-                  className="absolute bottom-0 left-0 w-0 h-0 border-solid"
-                  style={{
-                    borderWidth: '120px 0 0 170px',
-                    borderColor: 'transparent transparent transparent rgba(255, 248, 237, 0.98)',
-                    filter: 'drop-shadow(2px 0 6px rgba(53, 19, 31, 0.15))',
-                  }}
-                />
-                {/* Triangular Right Fold */}
-                <div
-                  className="absolute bottom-0 right-0 w-0 h-0 border-solid"
-                  style={{
-                    borderWidth: '120px 170px 0 0',
-                    borderColor: 'transparent rgba(255, 248, 237, 0.98) transparent transparent',
-                    filter: 'drop-shadow(-2px 0 6px rgba(53, 19, 31, 0.15))',
-                  }}
-                />
-                {/* Triangular Bottom Pocket Flap */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-0 border-solid mx-auto"
-                  style={{
-                    borderWidth: '0 210px 120px 210px',
-                    borderColor: 'transparent transparent rgba(255, 248, 237, 1) transparent',
-                    filter: 'drop-shadow(0 -3px 8px rgba(53, 19, 31, 0.18))',
-                  }}
-                />
-              </div>
+                {/* Left side triangle fold */}
+                <polygon points="0,0 50,54 0,100" fill="rgba(255, 248, 237, 0.98)" />
+                {/* Right side triangle fold */}
+                <polygon points="100,0 50,54 100,100" fill="rgba(255, 248, 237, 0.98)" />
+                {/* Bottom flap triangle */}
+                <polygon points="0,100 50,48 100,100" fill="#FFF8ED" />
+                {/* Subtle fold line shadows */}
+                <line x1="0" y1="0" x2="50" y2="54" stroke="rgba(200, 161, 90, 0.2)" strokeWidth="0.5" />
+                <line x1="100" y1="0" x2="50" y2="54" stroke="rgba(200, 161, 90, 0.2)" strokeWidth="0.5" />
+                <line x1="0" y1="100" x2="50" y2="48" stroke="rgba(53, 19, 31, 0.15)" strokeWidth="0.5" />
+                <line x1="100" y1="100" x2="50" y2="48" stroke="rgba(53, 19, 31, 0.15)" strokeWidth="0.5" />
+              </svg>
 
               {/* Handcrafted Wax Seal Centerpiece */}
               <div
